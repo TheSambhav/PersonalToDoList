@@ -1,0 +1,328 @@
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: #b3daff; /* Light blue background color */
+  color: #000; /* Black body text color */
+  font-size: 16px; /* Font size for body text */
+}
+
+
+.container {
+  
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5em; /* Heading font size 4em */
+  color: navy; /* Navy blue heading color */
+  margin-bottom: 20px;
+}
+
+.task-input {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+}
+
+button#add-task {
+  background-color: #007bff;
+  color: #fff;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+}
+
+button#add-task:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 0;
+  font-size: 16px;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+.task-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.task-buttons button {
+  margin-left: 10px;
+}
+
+button.delete-btn {
+  background-color: #ff4d4d;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+button.delete-btn:hover {
+  background-color: #ff3333;
+}
+
+button.edit-btn {
+  background-color: #ffa500;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+button.edit-btn:hover {
+  background-color: #e69500;
+}
+
+button.show-details-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#reset-tasks {
+  margin-top: 20px;
+  background-color: #d9534f;
+  color: #fff;
+  transition: background-color 0.3s;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+}
+
+#reset-tasks:hover {
+  background-color: #c9302c;
+}
+
+/* Circular Checkbox */
+.task-list-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  margin-right: 10px;
+  transition: border-color 0.3s;
+}
+
+/* Custom Checkmark (Tick mark) */
+.task-list-checkbox::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #4caf50;
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Checked State - Show the Green Tick mark inside a circle */
+.task-list-checkbox:checked::before {
+  content: '✔';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+
+/* Add some color accents */
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-buttons button:hover,
+button.show-details-btn:hover {
+  opacity: 0.8;
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* White text color */
+}
+
+.container.dark-mode {
+  background-color: rgba(0, 0, 0, 0.9); /* Darker background color for container */
+}
+
+.menu {
+  background-color: #f7f7f7;
+  padding: 8px;
+  position: absolute;
+  top: 10px; /* Adjust the position from the top */
+  left: 10px; /* Adjust the position from the left */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex; /* Set the menu container as a flex container */
+  align-items: center; /* Center menu items vertically */
+  border-radius: 12px;
+}
+
+/* Menu Button */
+/* Menu Button */
+.menu-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 12px;
+  height: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-bar {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* Menu Options */
+.menu-options {
+  position: absolute;
+  top: 20px;
+  left: 42px;
+  display: none;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.menu-options ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-options li {
+  padding: 10px;
+}
+
+.menu-options button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.dark-mode-text {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.dark-mode-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 12px;
+}
+
+.dark-mode-switch::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .dark-mode-switch {
+  background-color: #111;
+}
+
+input[type="checkbox"]:checked + .dark-mode-switch::before {
+  transform: translateX(24px);
+}
+
+/* Dark Mode Styles */
+.dark-mode .container {
+  background-color: #111;
+  color: #fff;
+}
+
+.dark-mode h1 {
+  color: #E50914; /* Netflix Red Color */
+}
