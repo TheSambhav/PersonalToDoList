@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags and other code -->
+  <!-- CSS link -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header and menu button -->
+  <div class="menu-btn" onclick="toggleMenu()">
+    <div class="menu-bar"></div>
+    <div class="menu-bar"></div>
+    <div class="menu-bar"></div>
+  </div>
+
+  <!-- Menu options -->
+  <div class="menu-options" id="menuOptions">
+    <ul>
+      <li><button onclick="toggleAbout()">About</button></li>
+      <li>
+        <label class="dark-mode-toggle" for="darkModeSwitch">
+          <span class="dark-mode-text">Dark Mode</span>
+          <input type="checkbox" id="darkModeSwitch" onclick="toggleDarkMode()">
+          <span class="dark-mode-switch"></span>
+        </label>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Task Manager Container -->
+  <div class="container">
+    <h1>Task Manager</h1>
+    <div class="task-input">
+      <input type="text" id="new-task" placeholder="Enter a new task..." onkeypress="handleKeyPress(event)">
+      <input type="date" id="task-date">
+      <button id="add-task" onclick="addTask()">Add Task</button>
+    </div>
+    <div id="added-message" class="added-message"></div>
+    <ul id="task-list"></ul>
+    <button id="reset-tasks" onclick="resetTasks()">Reset Tasks</button>
+  </div>
+
+  <!-- Script link -->
+  <script src="script.js"></script>
+</body>
+</html>
